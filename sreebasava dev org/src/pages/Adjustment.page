@@ -1,0 +1,51 @@
+<apex:page standardController="Field_Compliance__c" extensions="AdjustmentClass" showheader="false" sidebar="false">
+
+<apex:image id="theImage" value="{!$Resource.logo}" width="200" height="100"/>
+ <apex:pageMessages id="pageErrors"></apex:pageMessages>
+<apex:form >  
+
+
+<apex:pageblock id="txt3" title="LOSS/THEFT PAGE" >
+<apex:pageBlockButtons location="bottom" >
+
+                <apex:commandButton action="{!save}" value="Add Samples" />
+                <apex:commandButton action="{!cancel}" value="Cancel" />
+                
+ </apex:pageBlockButtons>
+            
+           
+   
+  <apex:pageBlockSection >
+  
+ 
+  
+  
+  <apex:inputField label="SalesRep" value="{!Field_Compliance__c.SalesRep__c}"/>
+  
+
+  
+  <apex:inputField label="Adjustment Reason" value="{!Field_Compliance__c.AdjustmentReason__c }"/>
+
+
+                                        
+  <apex:inputField label="Transaction Type" value="{!Field_Compliance__c.Transaction_Type__c}"/>
+  
+    
+  
+  </apex:pageBlockSection>
+ 
+      
+ 
+    
+    
+    
+   <br/><br/><br/><br/>   
+   </apex:pageblock> 
+    </apex:form>
+
+<center> <apex:outputLink value="/apex/Transactions" id="theLink">Main Menu</apex:outputLink></center>
+  
+  <apex:relatedList list="Sample_Object_Items__r" title="Samples" />
+     
+   
+</apex:page>

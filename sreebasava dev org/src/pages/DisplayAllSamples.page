@@ -1,0 +1,32 @@
+<apex:page standardController="Sample_Object_Item__c" recordsetVar="ant1"  showheader="false" sidebar="false">
+
+<apex:image id="theImage" value="{!$Resource.logo}" width="200" height="100"/>
+<apex:form >
+<apex:pageblock >
+<apex:pageBlockButtons location="Bottom" >
+
+                <apex:commandButton action="{!save}" value="Save"/>                
+                <apex:commandButton action="{!cancel}" value="Cancel"/>
+                
+ </apex:pageBlockButtons>
+<apex:pageBlockTable value="{!ant1}" var="a" >
+<apex:column value="{!a.Lot_Number__c}" />
+<apex:column value="{!a.Expiration_Date__c}" />
+<apex:column value="{!a.Product_Code__c}" />
+<apex:column value="{!a.Quantity__c}" />
+
+</apex:pageBlockTable>
+</apex:pageblock>
+
+ <apex:panelGrid columns="4" >
+                <apex:commandLink action="{!first}">First</apex:commandlink>
+                <apex:commandLink action="{!previous}" rendered="{!hasPrevious}">Previous</apex:commandlink>
+                <apex:commandLink action="{!next}" rendered="{!hasNext}">Next</apex:commandlink>
+                <apex:commandLink action="{!last}">Last</apex:commandlink>
+            </apex:panelGrid>
+</apex:form>
+
+ 
+ 
+ 
+</apex:page>

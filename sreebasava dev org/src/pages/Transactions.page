@@ -1,0 +1,29 @@
+<apex:page controller="TransactionsController"  showheader="false" sidebar="false" >
+<apex:image id="theImage" value="{!$Resource.logo}" width="200" height="100"/>
+<apex:image id="Aequorpharma" value="/img/Aequorpharma.jpg" width="220" height="55"/>
+<apex:form >  
+
+<apex:pageBlock title="MAIN MENU">
+
+<apex:pageBlockButtons location="bottom" >
+
+<apex:commandButton value="Samples Management Transactions" action="{!samplesmanagement}" />  
+
+<apex:commandButton value="Acknowledgement of Delivery" action="{!PendingItems}" />  
+
+<apex:commandButton value="Transfer" action="{!transfer}" /> 
+
+<apex:commandButton value="Returns" action="{!returns}" />
+
+<apex:commandButton value="Acknowlegement of Transfer" action="{!AOT}" /> 
+
+<apex:commandButton value="Acknowlegement of Return" action="{!AOR}" /> 
+
+<apex:commandButton value="Physical Inventory" action="{!inventory}" /> 
+
+<apex:commandButton value="Adjustment" action="{!adjustment}" /> 
+</apex:pageBlockButtons>
+</apex:pageBlock>
+</apex:form>  
+  
+</apex:page>

@@ -1,0 +1,13 @@
+<apex:page action="{!if($Profile.Name !='System Administrator', 
+    null, 
+    urlFor($Action.Account.Tab, $ObjectType.Account,
+    null, true))}"
+  standardController="Account" 
+  recordSetVar="accounts" 
+  tabStyle="Account">
+
+  <!-- Replace with your markup -->  
+    
+  This page replaces your Account home page for 
+  all users except Administrators.
+</apex:page>

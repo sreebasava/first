@@ -1,0 +1,3 @@
+<apex:page >
+    Accessibility for Object 'Member__c' is {!$ObjectType.Member__c.accessible}
+</apex:page>

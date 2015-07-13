@@ -1,0 +1,26 @@
+<apex:page controller="ReadXMLController">
+    <apex:form >        
+        <apex:pageblock title="Read XML" id="PB">
+          <!-- inputFile for uploading XML -->
+            <apex:pageblocksection >
+                <apex:pageblocksectionitem >
+                    <apex:outputLabel value="Please Select XML File:"/>  
+                    <apex:inputFile value="{!XMLBody}"> </apex:inputFile>
+                </apex:pageblocksectionitem>                
+            </apex:pageblocksection>
+            <!-- Table to show the XML Result -->
+            <apex:pageblocksection title="Result of XML" columns="1" rendered="{!contactList.size != null}">
+                <apex:pageblocktable value="{!contactList}" var="con">
+                    <apex:column value="{!con.fName}" headerValue="First Name"/>
+                    <apex:column value="{!con.LName}" headerValue="Last Name"/>
+                    <apex:column value="{!con.Position}" headerValue="Position"/>
+                    <apex:column value="{!con.Manager}" headerValue="Manager"/>
+                </apex:pageblocktable>
+            </apex:pageblocksection>
+            <!-- Button for calling method of controller -->
+            <center>
+                <apex:commandButton value="Read" action="{!readXML}"/>
+            </center>
+        </apex:pageblock>    
+    </apex:form>    
+</apex:page>

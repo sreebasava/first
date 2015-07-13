@@ -1,0 +1,23 @@
+<apex:page controller="AccountDML" showHeader="false" sidebar="false">
+<apex:form >
+    <apex:pageBlock >
+     <apex:pageMessages />
+        <apex:pageBlockTable value="{!AccountList}" var="a" id="AccDMLTable">
+            <apex:column headerValue="Account Name" >
+            <apex:inputfield value="{!a.acc.Name}"/>
+            </apex:column>
+            
+            <apex:column value="{!a.acc.ID}"/>
+            
+            <apex:column headerValue="Delete">
+            <apex:inputCheckbox value="{!a.DeleteInd}" rendered="true"/>
+            </apex:column>
+            
+        </apex:pageBlockTable>
+
+         <apex:commandButton value="Add Row" action="{!AddRow}" reRender="AccDMLTable"/>
+        <apex:commandButton value="Save" action="{!SaveAcc}" reRender="AccDMLTable"/>     
+
+    </apex:pageBlock>
+</apex:form>
+</apex:page>

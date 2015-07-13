@@ -1,0 +1,14 @@
+<apex:page controller="TestWsCallout" tabstyle="Account">
+    <apex:form >
+        <apex:actionFunction action="{!InsertRecord}" name="InsertRecord_JS" Rerender="statuses" status="Status1" oncomplete="CallWebService_JS();"/>
+        <apex:actionFunction action="{!CallWebService}" name="CallWebService_JS" status="Status2" reRender="statuses, msg"/>
+        <apex:outputPanel id="statuses">
+            <apex:actionStatus id="Status1" startText="...Inserting Record Into DB..." />
+            <apex:actionStatus id="Status2" startText="...Calling Web Service..." />
+        </apex:outputPanel>
+        <apex:outputPanel id="msg">
+            <apex:pageMessages />
+        </apex:outputPanel>
+        <div><input name="DoAction" class="btn" type="button" value="Do Action" onclick="InsertRecord_JS();return false;"/></div>
+    </apex:form>
+</apex:page>

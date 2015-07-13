@@ -1,0 +1,14 @@
+<!--- SCREEN 2------>  
+<apex:page controller="CommonController" id="pgId" sidebar="false">  
+  
+  <apex:form id="frmId">        
+      <apex:actionfunction action="{!goToPreviousPage}" name="gotoPrevious">  
+      <apex:pageblock id="pbId">  
+          Hidden Value: <apex:outputlabel value="{!valueHolderHidden}">  
+            
+Exposed Value: <apex:inputtext value="{!valueHolderText}">  
+            
+<apex:commandbutton onclick="gotoPrevious();return false;" value="Previous Page">   
+      </apex:commandbutton></apex:inputtext></apex:outputlabel></apex:pageblock>  
+  </apex:actionfunction></apex:form>  
+</apex:page>

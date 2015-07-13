@@ -1,0 +1,29 @@
+<apex:page standardController="Field_Compliance__c"  extensions="tenPageSizeExt" recordsetVar="ant" showheader="false" sidebar="false">
+<apex:image id="theImage" value="{!$Resource.logo}" width="200" height="100"/>
+<apex:form >
+<apex:pageBlock title="SAMPLES  MANAGEMENT PAGE" >
+    <apex:pageBlockTable value="{!ant}" var="a" >
+    
+    
+    <apex:column headerValue="Name">
+                    <apex:commandLink value="{!a.Name}" action="{!detail}">
+                    <apex:param name="param" value="{!a.Id}" />
+                    </apex:commandLink>
+                      </apex:column>   
+     <apex:column value="{!a.Transaction_Type__c}"/>    
+    <apex:column value="{!a.Date_Created__c}"/> 
+    <apex:column value="{!a.SalesRep__c}"/>
+     <apex:column value="{!a.Status__c}"/>     
+             
+    </apex:pageBlockTable>
+    
+    </apex:pageBlock>
+    
+               <apex:panelGrid columns="4" >
+                <apex:commandLink action="{!first}">First</apex:commandlink>
+                <apex:commandLink action="{!previous}" rendered="{!hasPrevious}">Previous</apex:commandlink>
+                <apex:commandLink action="{!next}" rendered="{!hasNext}">Next</apex:commandlink>
+                <apex:commandLink action="{!last}">Last</apex:commandlink>
+            </apex:panelGrid>
+    </apex:form>
+</apex:page>

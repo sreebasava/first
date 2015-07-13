@@ -1,0 +1,23 @@
+<apex:page controller="RestCalloutDemo">
+    <apex:form >
+       Select City: <apex:selectList id="chooseCity" value="{!city}" size="1">
+            <apex:selectOption itemValue="London" itemLabel="London"/>
+            <apex:selectOption itemValue="Delhi" itemLabel="New Delhi"/>
+            <apex:selectOption itemValue="Sydney" itemLabel="Sydney"/>
+        <apex:actionSupport event="onchange" action="{!requiredWeatherJSON}" reRender="weatherpanel"/>
+        </apex:selectList> 
+        
+    </apex:form>
+ 
+        <apex:pageBlock title="Weather for:" id="weatherpanel">
+        <apex:pageBlockSection collapsible="false" title="{!city}" >
+          <apex:outputText label="Longitude" value="{!ww.coord.lon}"></apex:outputText>
+           <apex:outputText label="Sunrise" value="{!ww.sys.sunrise}"></apex:outputText>  
+           <apex:outputText label="Latitude" value="{!ww.coord.lon}"></apex:outputText> 
+           <apex:outputText label="Sunset" value="{!ww.sys.sunset}"></apex:outputText>
+            <apex:outputText label="weather Description" value="{!ww.weather[0].description}"></apex:outputText>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+  
+    
+</apex:page>

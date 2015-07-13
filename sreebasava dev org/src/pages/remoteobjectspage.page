@@ -1,0 +1,47 @@
+<apex:page >
+    <!-- Remote Objects definition to set accessible sObjects and fields -->
+    <apex:remoteObjects >
+    <apex:remoteObjectModel name="Account" fields="Id,Name,Industry">
+    </apex:remoteObjectModel>
+    </apex:remoteObjects>
+    <!-- JavaScript to make Remote Objects calls -->
+    <script>
+        var createAccount = function(){
+            try{
+                var Accname=document.getElementById("accname").value;
+                var Accindustry=document.getElementById("accind").value;
+                var acDetails = { Name: Accname, Industry: Accindustry};
+                var ct = new SObjectModel.Account();
+                ct.create(acDetails , function(err) {
+                    if(err) {
+                        console.log(err);
+                        alert(err.message);
+                    }
+                    else {
+                        // this is the account
+                        console.log(ct.log()); // Dump contact to log
+                        console.log(ct.get('Id')); // Id is set when create completes
+                        alert('account created successfully with id'+ct.get('Id'));
+                    }
+              });
+            }catch(e){
+                alert(e);
+            }
+        };
+    </script>
+    
+    <h1>Create Account via Remote Objects</h1>
+   
+    <br/>
+    <table>
+        <tr>
+            <td>Account Name:</td><td><input type="text" name="firstname" id="accname"/></td>
+        </tr>
+        <tr>
+            <td>Industry:</td><td><input type="text" name="industry" id="accind"/></td>
+        </tr>
+        <tr>
+            <td><button onclick="createAccount ()">Create Account</button></td>
+        </tr>
+    </table>      
+</apex:page>

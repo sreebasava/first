@@ -1,0 +1,7 @@
+<apex:page sideBar="false">
+    <apex:composition template="Template">
+        <apex:define name="header">
+            Accord welcomes you!
+        </apex:define>
+    </apex:composition>
+</apex:page>

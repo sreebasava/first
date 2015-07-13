@@ -1,0 +1,23 @@
+<!--- SCREEN 1------>  
+<apex:page controller="CommonController" id="pgId" sidebar="false">   
+    
+  <!-- script to pass hiddne value through hidden variable -->    
+  <script>  
+      function passValueToController(x)  
+      {  
+          document.getElementById('pgId:frmId:holderId').value=x;                
+      }  
+  </script>  
+    
+  <apex:form id="frmId">      
+      <apex:actionfunction action="{!goToNextPage}" name="gotoNext">    
+      <apex:inputhidden id="holderId" value="{!valueHolderHidden}">   
+      <apex:pageblock >            
+          Exposed Value:<apex:inputtext value="{!valueHolderText}">   
+          <br/>         
+            
+<apex:commandbutton onclick="passValueToController('sandeep');gotoNext();return false;" value="Next Page">  
+      </apex:commandbutton></apex:inputtext></apex:pageblock>  
+               
+  </apex:inputhidden></apex:actionfunction></apex:form>  
+</apex:page>

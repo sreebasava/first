@@ -1,0 +1,7 @@
+<apex:page >
+    <apex:outputText >Welcome to Accord</apex:outputText><br/><br/>
+    <apex:insert name="header"/><br/><br/>
+    <apex:outputtext >We are Pioneer in training students</apex:outputtext><br/><br/>
+    <apex:insert name="body"/><br/><br/>
+    <apex:outputtext >Thank You</apex:outputtext>
+</apex:page>

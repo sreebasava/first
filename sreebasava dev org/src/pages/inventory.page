@@ -1,0 +1,25 @@
+<apex:page standardController="PhysicalInventory__c" extensions="InventoryController" showheader="false" sidebar="false">
+<apex:image id="theImage" value="{!$Resource.logo}" width="200" height="100"/>
+<apex:form >
+<apex:pageblock >
+<apex:pageBlockButtons location="Bottom" >
+
+                <apex:commandButton action="{!save}" value="Save"/>                
+                <apex:commandButton action="{!cancel}" value="Cancel"/>
+                
+ </apex:pageBlockButtons>
+<apex:pageblockSection >
+<apex:inputField label="Completed Inventory Date" value="{!PhysicalInventory__c.CompletedInventoryDate__c}" />
+<apex:inputField label="Count of Samples" value="{!PhysicalInventory__c.CountOfSamples__c}" />
+<apex:inputField label="Sales Rep" value="{!PhysicalInventory__c.SalesRep__c}" />
+<apex:inputField label="Status" value="{!PhysicalInventory__c.Status__c}" />
+
+</apex:pageblockSection>
+</apex:pageblock>
+
+</apex:form>
+
+ 
+ 
+ 
+</apex:page>

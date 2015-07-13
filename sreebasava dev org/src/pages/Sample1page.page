@@ -1,0 +1,11 @@
+<apex:page controller="Sample1" sidebar="false" action="{!show}">
+<apex:pagemessages />
+<apex:form >
+    <apex:pageBlock >
+        <apex:pageblockTable value="{!SummaryList}" var="r">            
+            <apex:column headerValue="Account Name" value="{!r.AcctName}"/>
+            <apex:column headerValue="Number of Contacts" value="{!r.Total}"/>
+        </apex:pageblockTable>
+    </apex:pageBlock>
+</apex:form>
+</apex:page>

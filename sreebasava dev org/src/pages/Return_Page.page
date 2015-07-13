@@ -1,0 +1,53 @@
+<apex:page standardController="Field_Compliance__c" extensions="ReturnPageClass" showheader="false" sidebar="false">
+<apex:image id="theImage" value="{!$Resource.logo}" width="200" height="100"/>
+ <apex:pageMessages id="pageErrors"></apex:pageMessages>
+<apex:form >  
+
+
+<apex:pageblock id="txt3" title="RETURN PAGE" >
+<apex:pageBlockButtons location="bottom" >
+
+                <apex:commandButton action="{!save}" value="Add Samples" />
+                <apex:commandButton action="{!cancel}" value="Cancel" />
+                
+ </apex:pageBlockButtons>
+            
+           
+   
+  <apex:pageBlockSection >
+  
+ 
+  
+  
+  <apex:inputField label="SendingRep" value="{!Field_Compliance__c.SalesRep__c}"/>
+  
+  <apex:inputField label="ReceivingRep" value="{!Field_Compliance__c.ReceivingRep__c}"/>
+  
+  <apex:inputField label="Transfer Type" value="{!Field_Compliance__c.Transfer_Type__c }"/>
+ 
+  <apex:inputField label="Reason For Return" value="{!Field_Compliance__c.Reason_For_Return__c }"/>
+                                      
+  <apex:inputField label="Transaction Type" value="{!Field_Compliance__c.Transaction_Type__c}"/>
+ 
+  
+    
+  
+  </apex:pageBlockSection>
+ 
+      
+ 
+    
+    
+    
+   <br/><br/><br/><br/>   
+   </apex:pageblock> 
+    </apex:form>
+ 
+   
+  
+     <apex:relatedList list="Sample_Object_Items__c" title="Samples1" />
+     
+    
+     
+   
+</apex:page>

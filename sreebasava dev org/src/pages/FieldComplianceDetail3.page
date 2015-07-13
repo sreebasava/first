@@ -1,0 +1,43 @@
+<apex:page Controller="fieldcustomcontroller">
+<apex:form >    
+
+<body onload="setFocus()">
+</body>
+<script>
+function setFocus(){
+document.geElementById("txt4").setFocus();}
+</script>
+<div id="txt4">
+</div>
+<apex:pageMessages />
+<apex:pageblock id="txt3" >
+<apex:pageBlockButtons location="top" >
+
+                <apex:commandButton action="{!save}" value="Save"/>
+                
+            </apex:pageBlockButtons>
+            
+           
+   <apex:pageblockTable value="{!fc}" var="a" >    
+    
+    <apex:column value="{!a.Name__c}"/>
+     <apex:column value="{!a.Description__c}"/>
+      <apex:column headerValue="Rep Name" value="{!a.SalesRep__c}"/>
+     <apex:column value="{!a.Transaction_Type__c}"/>  
+     <apex:column value="{!a.Status__c}"/>
+    <apex:column value="{!a.Date_Created__c}"/>
+    <apex:column headerValue="Date Received">
+     <apex:inputText value="{!selecteddate}" size="10" id="fg" onfocus="DatePicker.pickDate(false,this,false);" rendered="true"/>
+   </apex:column> 
+   
+   </apex:pageblockTable>
+ 
+ 
+   </apex:pageblock>  
+    
+       
+    </apex:form>
+   
+     <apex:relatedList list="Sample_Object_Items__r" />
+   
+</apex:page>

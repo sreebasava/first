@@ -1,0 +1,33 @@
+<apex:page controller="sample" sidebar="false" >
+<style type="text/css">
+    .outBorder
+    {
+        border:3px outset black;
+    }
+   
+    .inBorder
+    {
+        border-top:3px dotted black;
+        border-left:3px dotted black;
+    }   
+</style>
+    <apex:pageBlock title="Pageblock Table">
+        <apex:pageblockTable value="{!acc}" var="a">
+            <apex:column value="{!a.Name}"/>
+            <apex:column value="{!a.Name}"/>           
+        </apex:pageblockTable>
+    </apex:pageBlock>
+   
+    <apex:pageBlock title="Data Table">
+        <apex:dataTable value="{!acc}" var="a" styleClass="outBorder" width="550px">
+            <apex:column styleClass="inBorder">
+                <apex:facet name="header">Account Name</apex:facet>
+                <apex:outputText >{!a.Name}</apex:outputText>
+            </apex:column>      
+            <apex:column styleClass="inBorder">
+                <apex:facet name="header">Account Number</apex:facet>
+                <apex:outputText >{!a.AccountNumber}</apex:outputText>
+            </apex:column>             
+        </apex:dataTable>
+    </apex:pageBlock>   
+</apex:page>

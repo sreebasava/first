@@ -1,0 +1,3 @@
+<apex:page controller="TranslationWorkbenchDemoController">
+  <h1>{!$Label.Welcome}</h1>
+</apex:page>

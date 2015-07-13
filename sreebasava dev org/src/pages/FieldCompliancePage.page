@@ -1,0 +1,31 @@
+<apex:page standardController="Field_Compliance__c"  extensions="tenPageSizeExt" recordsetVar="ant" showheader="false" sidebar="false">
+<apex:form >
+<apex:pageBlock title="FIELD COMPLIANCE PAGE" >
+    <apex:pageBlockTable value="{!ant}" var="a" >
+    
+    
+    <apex:column headerValue="Name">
+                    <apex:commandLink value="{!a.Name}" action="{!detail}">
+                    <apex:param name="param" value="{!a.Id}" />
+                    </apex:commandLink>
+                      </apex:column>
+    <apex:column value="{!a.Name__c}"/>
+     <apex:column value="{!a.Transaction_Type__c}"/>
+    <apex:column value="{!a.Description__c}"/>
+    <apex:column value="{!a.Sending_Rep_Name__c}"/>    
+     <apex:column value="{!a.Sending_Rep_Address__c}"/> 
+      <apex:column value="{!a.Receiving_Rep_Name__c}"/>
+      <apex:column value="{!a.Receiving_Rep_Address__c}"/>          
+    </apex:pageBlockTable>
+    
+    </apex:pageBlock>
+    
+    
+   <apex:panelGrid columns="4">
+                <apex:commandLink action="{!first}">First</apex:commandlink>
+                <apex:commandLink action="{!previous}" rendered="{!hasPrevious}">Previous</apex:commandlink>
+                <apex:commandLink action="{!next}" rendered="{!hasNext}">Next</apex:commandlink>
+                <apex:commandLink action="{!last}">Last</apex:commandlink>
+            </apex:panelGrid>
+    </apex:form>
+</apex:page>

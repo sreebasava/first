@@ -1,0 +1,27 @@
+<apex:page standardController="Field_Compliance__c"  extensions="pendingitemscontoller" recordsetVar="ant" sidebar="false"  showHeader="false"  >
+<apex:form >
+<apex:pageBlock title="PENDING ITEMS">
+    <apex:pageBlockTable value="{!ant}" var="a"  >
+    
+    <apex:column headerValue="Transaction ID">
+                    <apex:commandLink value="{!a.Name}" action="{!detail}">
+                    <apex:param name="param" value="{!a.Id}" />
+                    </apex:commandLink>
+                      </apex:column>   
+     <apex:column value="{!a.Transaction_Type__c}"/>    
+    <apex:column value="{!a.Date_Created__c}"/> 
+    <apex:column value="{!a.User__c}"/>
+     <apex:column value="{!a.Status__c}" />
+            
+    </apex:pageBlockTable>
+    
+    </apex:pageBlock>
+    
+   <apex:panelGrid columns="4">
+                <apex:commandLink action="{!first}">First</apex:commandlink>
+                <apex:commandLink action="{!previous}" rendered="{!hasPrevious}">Previous</apex:commandlink>
+                <apex:commandLink action="{!next}" rendered="{!hasNext}">Next</apex:commandlink>
+                <apex:commandLink action="{!last}">Last</apex:commandlink>
+            </apex:panelGrid>
+    </apex:form>
+</apex:page>

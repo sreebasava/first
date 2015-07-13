@@ -1,0 +1,37 @@
+<apex:page standardController="Field_Compliance__c" extensions="FieldComplianceDetailClass">
+<!-- <body onload="setFocus()">
+</body>
+<script>
+function setFocus(){
+document.geElementById("txt4").setFocus();}
+</script>
+<div id="txt4">
+</div> -->
+<apex:form >
+<apex:pageblock id="txt3" >
+<apex:pageBlockButtons location="top" >
+
+                <apex:commandButton action="{!save}" value="Save"/>
+                <apex:commandButton action="{!cancel}" value="Cancel"/>
+</apex:pageBlockButtons>
+<apex:pageBlockSection >
+   
+      <apex:outputField value="{!Field_Compliance__c.SalesRep__c}"/>
+     <apex:outputField value="{!Field_Compliance__c.Transaction_Type__c}"/> 
+     <apex:outputField value="{!Field_Compliance__c.Transaction_Type__c}"/> 
+     <apex:outputField value="{!Field_Compliance__c.Status__c}"/>
+    <apex:outputField value="{!Field_Compliance__c.Date_Created__c}"/>
+    
+  
+    Date Received: <apex:inputText value="{!selecteddate}" onfocus="DatePicker.pickDate(false, this, false);"/>
+   </apex:pageBlockSection>
+   
+    
+  
+   </apex:pageblock>  
+  
+    </apex:form>
+    
+     <apex:relatedList list="Sample_Object_Items__r" />
+   
+</apex:page>

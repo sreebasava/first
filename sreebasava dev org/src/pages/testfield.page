@@ -1,0 +1,9 @@
+<apex:page standardController="test__c">
+  <apex:form >
+      <apex:pageblock >
+             <apex:repeat value="{!$ObjectType.test__c.fieldsets.testfieldset}" var="fieldVal">
+                    <apex:outputText value="{!test__c[fieldVal]}"/>
+             </apex:repeat>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

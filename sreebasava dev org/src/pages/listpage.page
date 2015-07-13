@@ -1,0 +1,19 @@
+<apex:page standardController="Account" recordSetVar="accounts">
+<apex:form >
+<apex:pageBlock >
+<apex:pageBlockTable value="{!Accounts}" var="a">
+<apex:column headerValue="Account Name">
+<apex:outputField value="{!a.name}"/>
+</apex:column>
+</apex:pageBlockTable>
+
+<!-- pagination actions supported by standard list controller -->
+<apex:pageBlockButtons >
+<apex:commandButton value="First" action="{!first}"/>
+<apex:commandButton value="Last" action="{!last}"/>
+<apex:commandButton value="Next" action="{!next}"/>
+<apex:commandButton value="previous" action="{!previous}"/>
+</apex:pageBlockButtons>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

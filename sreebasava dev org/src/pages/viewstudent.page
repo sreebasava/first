@@ -1,0 +1,18 @@
+<apex:page controller="ViewUserController">  
+   <apex:form >  
+   
+            <apex:selectCheckboxes >
+            <apex:selectOptions value="{!allusers}"/>
+            </apex:selectCheckboxes> 
+        
+     <apex:sectionHeader subtitle="All Users" title="Users" />  
+     <apex:pageBlock >  
+       <apex:pageBlockTable value="{!allusers}" var="a">  
+         <apex:column headervalue="Email" value="{!a.email__c}" />
+        
+         <apex:column headervalue="Name" value="{!a.name__c}" />
+           
+       </apex:pageBlockTable>  
+     </apex:pageBlock>  
+   </apex:form>  
+ </apex:page>

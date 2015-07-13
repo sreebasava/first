@@ -1,0 +1,54 @@
+<apex:page standardController="Field_Compliance__c" extensions="FieldComplianceDetailClass" showheader="false" sidebar="false">
+<apex:image id="theImage" value="{!$Resource.logo}" width="200" height="100"/>
+ <apex:pageMessages id="pageErrors"></apex:pageMessages>
+<apex:form >  
+
+<body onload="setFocus()">
+</body>
+<script>
+function setFocus(){
+document.geElementById("txt4").setFocus();}
+</script>
+<div id="txt4">
+</div>
+
+<apex:pageblock id="txt3">
+<apex:pageBlockButtons location="Bottom" >
+
+                <apex:commandButton action="{!save}" value="Save"/>
+                <apex:commandButton action="{!cancel}" value="Cancel"/>
+                
+ </apex:pageBlockButtons>
+            
+           
+   
+ 
+  <apex:pageBlockSection >
+  
+  <apex:outputText label="SalesRep" value="{!Field_Compliance__c.SendingRepName__c}"/>
+  <apex:outputText label="Transaction Type" value="{!Field_Compliance__c.Transaction_Type__c}"/>
+  <apex:outputText label="Status" value="{!Field_Compliance__c.Status__c}"/>
+  <apex:outputText label="Date Created" value="{!Field_Compliance__c.Date_Created__c}"/>
+   <apex:inputText label="Date received" value="{!selecteddate}" size="10" id="fg" onfocus="DatePicker.pickDate(false,this,false);" rendered="{!showinput}" />
+  
+   <apex:outputText label="Date received" value="{!Field_Compliance__c.Date_Received__c }"  rendered="{!showoutput}"/>
+  
+  </apex:pageBlockSection>
+   
+ 
+   
+    
+    
+   <br/><br/><br/><br/>   
+ 
+  </apex:pageblock> 
+    </apex:form>
+ 
+   
+  
+     <apex:relatedList list="Sample_Object_Items__r" title="Samples" />
+     
+    
+     
+   
+</apex:page>

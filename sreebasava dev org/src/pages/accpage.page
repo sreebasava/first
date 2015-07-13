@@ -1,0 +1,31 @@
+<apex:page StandardController="Account" extensions="ApxCls">
+
+<apex:pageBlock >
+
+<apex:repeat value="{!Records}" var="Re">
+
+<apex:pageBlockSection columns="3">
+
+<apex:outputField value="{!Re.Name}"/>
+
+
+<apex:pageBlockTable value="{!Re.Contacts}" var="con">
+
+<apex:column headervalue="Contacts Data" value="{!con.Phone}"/>
+
+</apex:pageBlockTable>
+
+
+<apex:pageBlockTable value="{!Re.Opportunities}" var="opr">
+
+<apex:column headervalue="Opp data" value="{!opr.Name}"/> //here Name is a field from opportunity
+
+</apex:pageBlockTable>
+
+</apex:pageBlockSection>
+
+</apex:repeat>
+
+</apex:pageBlock>
+
+</apex:page>

@@ -1,0 +1,25 @@
+<apex:page standardController="Sample_Object_Item__c" extensions="samplesclass" showheader="false" sidebar="false">
+<apex:image id="theImage" value="{!$Resource.logo}" width="200" height="100"/>
+<apex:form >
+<apex:pageblock >
+<apex:pageBlockButtons location="Bottom" >
+
+                <apex:commandButton action="{!save}" value="Save"/>                
+                <apex:commandButton action="{!cancel}" value="Cancel"/>
+                
+ </apex:pageBlockButtons>
+<apex:pageblockSection >
+<apex:inputField label="Lot Number" value="{!Sample_Object_Item__c.Lot_Number__c}" />
+<apex:inputField label="Expiration Date" value="{!Sample_Object_Item__c.Expiration_Date__c}" />
+<apex:inputField label="Product Code" value="{!Sample_Object_Item__c.Product_Code__c}" />
+<apex:inputField label="Quantity" value="{!Sample_Object_Item__c.Quantity__c}" />
+
+</apex:pageblockSection>
+</apex:pageblock>
+
+</apex:form>
+
+ 
+ 
+ 
+</apex:page>

@@ -1,0 +1,22 @@
+<apex:page controller="RemotingObjectsController1">
+  <script>
+      // Will hold our converted Apex data structures
+      var classInstances;
+ 
+      Visualforce.remoting.Manager.invokeAction(
+        '{!$RemoteAction.RemotingObjectsController1.getClassInstances}',
+        function(result, event) {
+          // Put the results into a var for pedantries sake
+          classInstances = result;
+ 
+          console.log(classInstances);
+ 
+          // Assign the first element of the array to a local var
+          var me = classInstances[0];
+ 
+          // And now we can use the var in the "normal" JS way
+          var myName = me.firstName;
+          console.log(myName);
+        });
+  </script>
+</apex:page>

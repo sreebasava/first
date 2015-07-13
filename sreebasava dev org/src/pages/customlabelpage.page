@@ -1,0 +1,4 @@
+<apex:page standardController="Account">
+<h1>Example for Custom labels</h1>
+<apex:outputLabel value="{!$Label.Sample}"/>
+</apex:page>

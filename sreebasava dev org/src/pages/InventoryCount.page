@@ -1,0 +1,8 @@
+<apex:page controller="InventoryCountController" >
+ 
+ 
+  This is your Total Count Inventory of Samples : {!Count}<br/>
+  
+  
+  
+</apex:page>

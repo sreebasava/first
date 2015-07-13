@@ -1,0 +1,23 @@
+<apex:page controller="pendingAORcontoller"    sidebar="false" showHeader="false"  >
+<apex:image id="theImage" value="{!$Resource.logo}" width="200" height="100"/>
+<apex:form >
+<apex:pageBlock title="PENDING ACKNOWLEDGEMENT OF RETURN ITEMS">
+    <apex:pageBlockTable value="{!Req}" var="a"  >
+    
+    <apex:column headerValue="Transaction ID">
+                    <apex:commandLink value="{!a.Name}" action="{!detail}">
+                    <apex:param name="param" value="{!a.Id}" />
+                    </apex:commandLink>
+                      </apex:column>   
+     <apex:column value="{!a.Transaction_Type__c}"/>    
+    <apex:column value="{!a.Date_Created__c}"/> 
+    
+     <apex:column value="{!a.Status__c}" />
+            
+    </apex:pageBlockTable>
+    
+    </apex:pageBlock>
+    
+  
+    </apex:form>
+</apex:page>
